@@ -247,7 +247,7 @@ const portfolioData = {
             title: "Mijn portfolio",
             description: "Mijn portfolio en Curriculum Vitae",
             image: "./images/homepage-mijn-portfolio.png",
-            link: "https://github.com/Dragonshay/Portfolio-CV-main.git",
+            link: "https://Dragonshay.github.io",
         },
         {
             title: "Boter Kaas & Eieren",
