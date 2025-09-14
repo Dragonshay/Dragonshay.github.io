@@ -517,7 +517,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const testLogo = new Image();
         testLogo.onload = function() {
             logoText.style.display = 'none';
-            logoElement.style.backgroundImage = "url('main-logo.jpg')";
+            logoElement.style.backgroundImage = "url('main-logo.JPG')";
             logoElement.classList.remove('no-logo');
         };
         testLogo.onerror = function() {
