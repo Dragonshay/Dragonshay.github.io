@@ -525,7 +525,7 @@ document.addEventListener('DOMContentLoaded', function() {
             logoText.textContent = 'Logo';
             logoElement.classList.add('no-logo');
         };
-        testLogo.src = 'main-logo.jpg';
+        testLogo.src = 'main-logo.JPG';
     }
 
     // 3. Check voor cartoon profielfoto
