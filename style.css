@@ -51,11 +51,15 @@ h1 {
 }
 
 nav {
-    background: rgba(139, 115, 85, 0.1);
+    background: rgba(139, 115, 85, 0.15);
     padding: 20px;
     border-radius: 15px;
     margin-bottom: 30px;
-    backdrop-filter: blur(15px);
+    /* Safari fallback with more opaque background */
+    background: rgba(228, 218, 200, 0.8);
+    /* Modern browsers with backdrop-filter support */
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);    
 }
 
 nav ul {
@@ -338,21 +342,30 @@ nav a:hover {
     display: none;
 }
 
-/* Typemachine Animatie */
+/* Optimized Typemachine Animatie - High Performance */
 .typewriter {
     overflow: hidden;
     white-space: nowrap;
     margin: 0 auto;
     letter-spacing: .05em;
-    animation: typing 3.5s steps(40, end);
+    transform-origin: left center;
+    animation: typing-transform 3.5s steps(40, end);
 }
 
-/* Verwijderd: blink-caret animatie om herhaaldelijk knipperen te voorkomen.
-   Dit wordt geregeld door de JavaScript-functionaliteit. */
+@keyframes typing-transform {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+/* Optional: Blinking cursor with better performance */
+.typewriter-cursor {
+    border-right: 2px solid #2c3e26;
+    animation: blink-cursor 1s infinite;
+}
+
+@keyframes blink-cursor {
+    0%, 50% { border-color: transparent; }
+    51%, 100% { border-color: #2c3e26; }
 }
 
 /* Footer */
@@ -371,7 +384,6 @@ footer {
     box-shadow: 0 3px 15px rgba(0,0,0,0.1);
     border-radius: 15px;         /* net als header */
 }
-
 
 /* Responsiviteit */
 @media (max-width: 768px) {
